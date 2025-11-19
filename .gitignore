@@ -37,3 +37,4 @@ npm-debug.log*
 # Original archived files (keep in case we need them later)
 WholeCare – The Future of Caregiving_files/
 *.html.bak
+.vercel

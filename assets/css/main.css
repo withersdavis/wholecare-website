@@ -17,7 +17,7 @@
     --color-bg-light: #F8F9FA;
 
     /* Typography */
-    --font-handwritten: 'Reenie Beanie', cursive;
+    --font-handwritten: 'Caveat', cursive;
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
 
@@ -312,10 +312,93 @@ p {
 }
 
 /* ===========================
+   Landing Section
+   =========================== */
+.landing {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.landing__container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.landing__question {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--spacing-xl);
+}
+
+.landing__scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.landing__logo-link {
+    display: inline-block;
+    transition: var(--transition-normal);
+}
+
+.landing__logo-link:hover {
+    transform: scale(1.05);
+}
+
+.landing__logo {
+    height: 60px;
+    width: auto;
+}
+
+.landing__arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    transition: var(--transition-normal);
+    animation: bounce 2s infinite;
+}
+
+.landing__arrow:hover {
+    color: var(--color-highlight);
+    transform: translateY(4px);
+}
+
+.landing__arrow-icon {
+    width: 40px;
+    height: 40px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* ===========================
    Hero Section
    =========================== */
 .hero {
-    margin-top: var(--header-height);
+    margin-top: 0;
     background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
     color: var(--color-white);
     padding: var(--spacing-xxl) 0;
@@ -745,6 +828,11 @@ p {
         font-size: 2rem;
     }
 
+    .landing__question {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+
     .hero__title-handwritten {
         font-size: 2.5rem;
     }
@@ -861,6 +949,29 @@ p {
         align-items: stretch;
     }
 
+    .landing__question {
+        font-size: 1.75rem;
+        letter-spacing: 0.5px;
+    }
+
+    .landing__logo {
+        height: 50px;
+    }
+
+    .landing__arrow-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .section__arrow-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .section__arrow {
+        bottom: 1.5rem;
+    }
+
     .btn {
         width: 100%;
     }
@@ -902,6 +1013,64 @@ p {
     .section__title {
         font-size: 1.75rem;
     }
+
+    .landing__question {
+        font-size: 1.5rem;
+        letter-spacing: 0px;
+    }
+
+    .landing__logo {
+        height: 40px;
+    }
+
+    .section__arrow-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .section__arrow {
+        bottom: 1rem;
+    }
+}
+
+/* ===========================
+   Section Arrows
+   =========================== */
+.section__arrow {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    transition: var(--transition-normal);
+    animation: bounce 2s infinite;
+    z-index: 10;
+}
+
+.section__arrow:hover {
+    color: var(--color-accent);
+    transform: translateX(-50%) translateY(4px);
+}
+
+.section__arrow--light {
+    color: var(--color-white);
+}
+
+.section__arrow--light:hover {
+    color: var(--color-highlight);
+}
+
+.section__arrow-icon {
+    width: 32px;
+    height: 32px;
+}
+
+/* Make sections position relative so arrows position correctly */
+section {
+    position: relative;
 }
 
 /* ===========================
